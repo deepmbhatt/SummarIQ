@@ -1,0 +1,367 @@
+<!--
+=========================================================
+* Argon Dashboard 3 - v2.1.0
+=========================================================
+
+* Product Page: https://www.creative-tim.com/product/argon-dashboard
+* Copyright 2024 Creative Tim (https://www.creative-tim.com)
+* Licensed under MIT (https://www.creative-tim.com/license)
+* Coded by Creative Tim
+
+=========================================================
+
+* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="apple-touch-icon" sizes="76x76" href="{{ url_for('static', filename='assets/img/apple-icon.png') }}">
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='assets/img/SummarIQ.png') }}">
+  <title>
+    SummarIQ
+  </title>
+  <!--     Fonts and icons     -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+  <!-- Nucleo Icons -->
+  <link href="https://demos.creative-tim.com/argon-dashboard-pro/assets/css/nucleo-icons.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+  <link href="https://demos.creative-tim.com/argon-dashboard-pro/assets/css/nucleo-svg.css" rel="stylesheet" />
+  <!-- Font Awesome Icons -->
+  <script src="https://kit.fontawesome.com/84e7f8bcbd.js" crossorigin="anonymous"></script>
+  <!-- CSS Files -->
+  <link id="pagestyle" href="{{ url_for('static', filename='assets/css/argon-dashboard.css') }}" rel="stylesheet" />
+</head>
+
+<body class="g-sidenav-show   bg-dark-100">
+  <div class="min-height-600 bg-dark position-absolute w-100"></div>
+  
+  <main class="main-content position-relative border-radius-lg ">
+    <!-- Navbar -->
+    <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl " id="navbarBlur" data-scroll="false">
+      <div class="container-fluid py-1 px-3">
+        <nav aria-label="breadcrumb">
+            <div class="d-flex align-items-center">
+            <img src="{{ url_for('static', filename='assets/img/SummarIQ.png') }}" alt="SummarIQ Logo" style="height: 40px; margin-right: 10px;">
+            <h6 class="font-weight-bolder text-white mb-0">SummarIQ</h6>
+            </div>
+        </nav>
+        <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
+          <div class="ms-md-auto pe-md-3 d-flex align-items-center">
+
+          </div>
+          <ul class="navbar-nav  justify-content-end">
+            <li class="nav-item d-flex align-items-center">
+                <a href="/" class="nav-link text-white font-weight-bold px-0">
+                <i class="fa fa-home me-sm-1"></i>
+                <span class="d-sm-inline d-none">Try Another Video</span>
+                </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- End Navbar -->
+    <div class="container-fluid py-4">
+      <div class="container mt-4">
+        <div class="row">
+            <!-- Video Title and Description -->
+            <div class="col-xl-12 col-sm-12 mb-4">
+                <div class="card bg-light">
+                  <div class="card-body p-3">
+                    <div class="icon icon-shape bg-gradient-info shadow-info text-center rounded-circle text-end">
+                      <i class="ni ni-tv-2 text-lg opacity-10" aria-hidden="true"></i>
+                    </div>
+                    <div class="row align-items-center">
+                      <!-- Text Content (Centered) -->
+                      <div class="col-12 d-flex flex-column align-items-center text-center">
+                        <div class="numbers">
+                          <!-- Video Title -->
+                          <p class="text-sm mb-0 text-uppercase font-weight-bold">Video Title</p>
+                          <h5 class="font-weight-bolder">{{ metadata.title }}</h5>
+                  
+                          <!-- Published Date -->
+                          <p class="mb-0">
+                            <span class="text-muted text-sm">Published on:</span> {{ metadata.publishedAt }}
+                          </p>
+                  
+                          <!-- Video Description -->
+                          <p class="mb-0 mt-2">{{ metadata.description }}</p>
+                  
+                          <!-- Video Thumbnail -->
+                          <img src="{{ metadata.thumbnail }}" alt="Video Thumbnail" class="img-fluid border-radius-lg mt-3">
+                        </div>
+                      
+                        
+                      </div>
+                    </div>
+                  </div>
+                  
+                </div>
+            </div>
+        </div>
+    
+        <!-- First Row of 3 Cards -->
+        <div class="row mb-4">
+            <!-- Views -->
+            <div class="col-xl-4 col-sm-6 mb-4">
+                <div class="card h-100">
+                    <div class="card-body p-3">
+                        <div class="row">
+                            <div class="col-8">
+                                <div class="numbers">
+                                    <p class="text-sm mb-0 text-uppercase font-weight-bold">Views</p>
+                                    <h5 class="font-weight-bolder">{{ metadata.viewCount }}</h5>
+                                    <p class="mb-0"><span class="text-success text-sm font-weight-bolder">Live</span> count</p>
+                                </div>
+                            </div>
+                            <div class="col-4 text-end">
+                                <div class="icon icon-shape bg-gradient-primary shadow-primary text-center rounded-circle">
+                                    <i class="ni ni-world text-lg opacity-10" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Likes -->
+            <div class="col-xl-4 col-sm-6 mb-4">
+                <div class="card h-100">
+                    <div class="card-body p-3">
+                        <div class="row">
+                            <div class="col-8">
+                                <div class="numbers">
+                                    <p class="text-sm mb-0 text-uppercase font-weight-bold">Likes</p>
+                                    <h5 class="font-weight-bolder">{{ metadata.likeCount }}</h5>
+                                    <p class="mb-0"><span class="text-success text-sm font-weight-bolder">👍</span> users liked</p>
+                                </div>
+                            </div>
+                            <div class="col-4 text-end">
+                                <div class="icon icon-shape bg-gradient-success shadow-success text-center rounded-circle">
+                                    <i class="ni ni-like-2 text-lg opacity-10" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Comments -->
+            <div class="col-xl-4 col-sm-6 mb-4">
+                <div class="card h-100">
+                    <div class="card-body p-3">
+                        <div class="row">
+                            <div class="col-8">
+                                <div class="numbers">
+                                    <p class="text-sm mb-0 text-uppercase font-weight-bold">Comments</p>
+                                    <h5 class="font-weight-bolder">{{ metadata.commentCount }}</h5>
+                                    <p class="mb-0"><span class="text-muted text-sm font-weight-bolder">Discussions</span></p>
+                                </div>
+                            </div>
+                            <div class="col-4 text-end">
+                                <div class="icon icon-shape bg-gradient-warning shadow-warning text-center rounded-circle">
+                                    <i class="ni ni-chat-round text-lg opacity-10" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Second Row of 3 Cards -->
+        <div class="row mb-4">
+            <!-- Published Date -->
+            <div class="col-xl-4 col-sm-6 mb-4">
+                <div class="card h-100">
+                    <div class="card-body p-3">
+                        <div class="row">
+                            <div class="col-8">
+                                <div class="numbers">
+                                    <p class="text-sm mb-0 text-uppercase font-weight-bold">Published Date</p>
+                                    <h5 class="font-weight-bolder">{{ metadata.publishedAt }}</h5>
+                                </div>
+                            </div>
+                            <div class="col-4 text-end">
+                                <div class="icon icon-shape bg-gradient-danger shadow-danger text-center rounded-circle">
+                                    <i class="ni ni-calendar-grid-58 text-lg opacity-10" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Video Duration -->
+            <div class="col-xl-4 col-sm-6 mb-4">
+                <div class="card h-100">
+                    <div class="card-body p-3">
+                        <div class="row">
+                            <div class="col-8">
+                                <div class="numbers">
+                                    <p class="text-sm mb-0 text-uppercase font-weight-bold">Duration</p>
+                                    <h5 class="font-weight-bolder">{{ metadata.duration }}</h5>
+                                    <p class="mb-0 text-muted text-sm">HH:MM:SS</p>
+                                </div>
+                            </div>
+                            <div class="col-4 text-end">
+                                <div class="icon icon-shape bg-gradient-info shadow-info text-center rounded-circle">
+                                    <i class="ni ni-time-alarm text-lg opacity-10" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Tags -->
+            <div class="col-xl-4 col-sm-6 mb-4">
+                <div class="card h-100">
+                    <div class="card-body p-3">
+                        <div class="row">
+                            <div class="col-8">
+                                <div class="numbers">
+                                    <p class="text-sm mb-0 text-uppercase font-weight-bold">Tags</p>
+                                    <h5 class="font-weight-bolder">
+                                        {% for tag in metadata.tags %}
+                                            <span class="badge bg-secondary">{{ tag }}</span>
+                                        {% endfor %}
+                                    </h5>
+                                </div>
+                            </div>
+                            <div class="col-4 text-end">
+                                <div class="icon icon-shape bg-gradient-dark shadow-dark text-center rounded-circle">
+                                    <i class="ni ni-tag text-lg opacity-10" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+<!-- Video Summary Section -->
+<div class="row mt-4">
+  <div class="col-lg-12 mb-lg-0 mb-4">
+    <div class="card z-index-2 h-100">
+      <div class="card-header pb-0 pt-3 bg-transparent">
+        <h6 class="text-capitalize">Video Summary</h6>
+      </div>
+      <div class="card-body p-3">
+        <!-- This is where the markdown content will be rendered -->
+        <div id="markdown-summary" class="chart">
+          {{ summary | safe }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Wordcloud Carousel Section -->
+<div class="row mt-4">
+  <div class="col-lg-12">
+    <div class="card h-100 d-flex align-items-center justify-content-center">
+      <div class="card-body p-0 w-100">
+        <div id="wordcloudCarousel" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            {% for wordcloud in wordclouds %}
+            <div class="carousel-item {% if loop.first %} active {% endif %}">
+              <div class="d-flex flex-column align-items-center justify-content-center">
+                <img src="{{ url_for('static', filename=wordcloud) }}" class="d-block" alt="Wordcloud"
+                  style="object-fit: contain; max-height: 400px; width: auto;">
+                <!-- Add label below the image -->
+                <div class="mt-2 text-center text-white">
+                  {% if "positive" in wordcloud %}
+                  <h5>Positive Word Cloud</h5>
+                  {% elif "negative" in wordcloud %}
+                  <h5>Negative Word Cloud</h5>
+                  {% elif "neutral" in wordcloud %}
+                  <h5>Neutral Word Cloud</h5>
+                  {% else %}
+                  <h5>All Word Cloud</h5>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#wordcloudCarousel"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#wordcloudCarousel"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+        <!-- Title at the bottom of the carousel -->
+        <div class="position-absolute bottom-0 start-0 p-3">
+          <h5 class="text-white mb-0">{{ metadata.title }}</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+
+
+  .carousel-control-prev-icon, .carousel-control-next-icon {
+      background-color: #000; /* Change arrow color for better visibility */
+  }
+
+  .carousel-control-prev, .carousel-control-next {
+      top: 50%;  /* Vertically center the controls */
+      transform: translateY(-50%); /* Adjust positioning for better alignment */
+  }
+</style>
+  
+
+  
+    
+      
+        </div>
+      </div>
+      
+      <footer class="footer pt-3  ">
+        <div class="container-fluid">
+          <div class="row align-items-center justify-content-lg-between">
+            <div class="col-lg-6 mb-lg-0 mb-4">
+              <div class="copyright text-center text-sm text-muted text-lg-start">
+                © <script>
+                  document.write(new Date().getFullYear())
+                </script>,
+                made with <i class="fa fa-heart"></i> by
+                <a href="https://deepmbhatt.github.io" class="font-weight-bold" target="_blank">Deep Bhatt</a>
+                for a better web.
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </main>
+  
+  <script>
+    var win = navigator.platform.indexOf('Win') > -1;
+    if (win && document.querySelector('#sidenav-scrollbar')) {
+      var options = {
+        damping: '0.5'
+      }
+      Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
+    }
+  </script>
+  <!-- Github buttons -->
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+  <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
+  <script src="{{ url_for('static', filename='assets/js/argon-dashboard.min.js') }}"></script>
+</body>
+
+</html>
