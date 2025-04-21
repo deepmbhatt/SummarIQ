@@ -13,8 +13,8 @@ import os
 from sentiment_analysis import analyze_comments, generate_wordcloud
 
 # ========== CONFIG ========== #
-YOUTUBE_API_KEY = "AIzaSyBUPDLsuN3PXwBBQto--jbVgLdmDe0cUWw"
-GEMINI_API_KEY = "AIzaSyBGW9nmZU5aPf7a3gj6j4vRr20ca3pKqhI"
+YOUTUBE_API_KEY = "Youtube API Key"
+GEMINI_API_KEY = "Gemini API Key"
 
 app = Flask(__name__)
 
